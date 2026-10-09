@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECOCOMPOS – Sampah Dapur Jadi Pupuk</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#eaf6e2;--card:#fff;--ink:#3a2616;--mute:#6b5646;--g:#1f9150;--gd:#146b39;--y:#ffc93c;--c:#ff6b4a;--soil:#4a2f1d;--line:#cfe6c3;--o:#d9f2d0;--a:#fff0bd;--b:#ffd9d0;--ok:#146b39;--bad:#c2381a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14201a;--card:#1d2d24;--ink:#f4efe3;--mute:#b8c7b9;--line:#2f4a3a;--o:#24452f;--a:#4a4220;--b:#51302a;--g:#4fd28a;--gd:#7fe3a9;--ok:#7fe3a9;--bad:#ff9a85}}
+:root[data-theme="dark"]{--bg:#14201a;--card:#1d2d24;--ink:#f4efe3;--mute:#b8c7b9;--line:#2f4a3a;--o:#24452f;--a:#4a4220;--b:#51302a;--g:#4fd28a;--gd:#7fe3a9;--ok:#7fe3a9;--bad:#ff9a85}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:600 18px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;line-height:1.05;margin:0}
+main{max-width:780px;margin:0 auto;padding:0 16px 50px}
+.hero{margin:0 -16px;background:linear-gradient(170deg,#1f9150 0%,#146b39 100%);color:#fff;padding:38px 22px 80px;text-align:center;position:relative;border-radius:0 0 50% 50%/0 0 36px 36px}
+.hero h1{font-size:clamp(50px,15vw,92px);font-weight:800;letter-spacing:-.02em;color:var(--y);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.hero p{max-width:28em;margin:10px auto 0;font-size:19px}
+.cycle{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:22px;flex-wrap:wrap}
+.cy{background:#fff;color:var(--ink);border-radius:20px;padding:10px 14px;font:800 15px Nunito,sans-serif;min-width:96px;box-shadow:0 5px 0 rgba(0,0,0,.16)}
+.cy span{display:block;font-size:38px;line-height:1.1}
+.cy:nth-child(3){transform:rotate(-3deg)}.cy:nth-child(5){transform:rotate(3deg)}
+.arr{font-size:26px;color:var(--y);font-weight:800}
+.go{display:inline-block;margin-top:24px;background:var(--y);color:#3a2a00;text-decoration:none;font:800 19px Nunito,sans-serif;padding:13px 28px;border-radius:999px;box-shadow:0 5px 0 #c99a0e}
+.go:active{transform:translateY(3px);box-shadow:0 2px 0 #c99a0e}
+section{margin-top:-30px;padding-top:56px}
+.sec{background:var(--card);border-radius:28px;padding:22px 18px;box-shadow:0 6px 0 var(--line)}
+h2{font-size:clamp(28px,7.5vw,38px);font-weight:800;color:var(--gd)}
+h2 em{font-style:normal;display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--y);color:#3a2a00;margin-right:8px;font-size:.85em}
+.lead{color:var(--mute);margin:8px 0 16px}
+:focus-visible{outline:4px solid var(--c);outline-offset:2px}
+.item{text-align:center;font:800 clamp(28px,8vw,36px) "Baloo 2",sans-serif;padding:10px 0 0}
+.item span{display:block;font-size:76px;line-height:1.1}
+.score{display:flex;justify-content:space-between;font-weight:800;color:var(--mute);font-size:16px}
+.fb{min-height:60px;text-align:center;padding:6px 2px;font-weight:800}
+.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+.bins{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bin{border:0;border-radius:20px;padding:14px 4px;min-height:96px;font:800 18px "Baloo 2",sans-serif;color:var(--ink);cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.14)}
+.bin[data-k=o]{background:var(--o)}.bin[data-k=a]{background:var(--a)}.bin[data-k=b]{background:var(--b)}
+.bin i{display:block;font-style:normal;font-size:30px}
+.bin small{display:block;font:600 12.5px/1.25 Nunito,sans-serif;margin-top:2px}
+.bin:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.14)}
+.btn{background:var(--g);color:#fff;border:0;border-radius:999px;padding:12px 26px;font:800 18px Nunito,sans-serif;cursor:pointer}
+.bar{height:16px;background:var(--line);border-radius:9px;overflow:hidden;margin:4px 0 16px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--y),var(--g));border-radius:9px;transition:width .35s}
+.step{display:flex;gap:14px;align-items:center;border:3px solid var(--line);background:var(--card);border-radius:22px;padding:12px 14px;margin-bottom:10px;cursor:pointer;width:100%;text-align:left;color:var(--ink);font:inherit}
+.step .ic{flex:none;width:56px;height:56px;border-radius:50%;background:var(--a);display:grid;place-items:center;font-size:29px}
+.step b{display:block;font:800 21px "Baloo 2",sans-serif}
+.step p{margin:0;color:var(--mute);font-size:16px;line-height:1.45;font-weight:600}
+.step.done{border-color:var(--g);background:var(--o)}
+.step.done .ic{background:var(--g)}
+.step.done .ic::after{content:"✓";color:#fff;font-weight:800}
+.step.done .ic span{display:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.two div{border-radius:20px;padding:14px;font-size:16px}
+.two h3{font-size:21px;margin-bottom:4px}
+.yes{background:var(--o)}.no{background:var(--b)}
+.two ul{margin:0;padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:3px solid var(--g);background:transparent;color:var(--gd);border-radius:999px;padding:8px 15px;font:800 16px Nunito,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--g);color:#fff}
+#ans{margin-top:14px;background:var(--a);border-radius:20px;padding:14px 16px}
+#ans ul{margin:6px 0 0;padding-left:20px}
+.calc{background:var(--soil);color:#fff;border-radius:24px;padding:20px;margin-top:14px;text-align:center}
+.calc input{width:100%;accent-color:var(--y);height:34px}
+.big{font:800 clamp(44px,13vw,64px) "Baloo 2",sans-serif;color:var(--y);line-height:1}
+footer{margin-top:36px;text-align:center;color:var(--mute);font-size:15px}
+@media(max-width:430px){.two{grid-template-columns:1fr}.bin{font-size:16px}.arr{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <h1>ECOCOMPOS</h1>
+  <p>Sisa dapur jangan dibuang. Ubah jadi pupuk gratis untuk tanaman di rumah!</p>
+  <div class="cycle" aria-label="Siklus: sisa dapur menjadi kompos menjadi tanaman subur">
+    <div class="cy"><span>🥬</span>Sisa dapur</div><div class="arr">➜</div>
+    <div class="cy"><span>🪣</span>Kompos</div><div class="arr">➜</div>
+    <div class="cy"><span>🌱</span>Tanaman subur</div>
+  </div>
+  <a class="go" href="#pilah">Ayo mulai</a>
+</header>
+
+<section id="pilah"><div class="sec">
+  <h2><em>1</em>Pintar memilah</h2>
+  <p class="lead">Ketuk tempat sampah yang tepat. Ada 8 barang.</p>
+  <div class="score"><span id="no"></span><span id="sc"></span></div>
+  <div class="item" id="item" aria-live="polite"></div>
+  <div class="fb" id="fb" aria-live="polite"></div>
+  <div class="bins" id="bins">
+    <button class="bin" data-k="o"><i>🌿</i>Organik<small>bisa jadi kompos</small></button>
+    <button class="bin" data-k="a"><i>♻️</i>Anorganik<small>bank sampah</small></button>
+    <button class="bin" data-k="b"><i>⚠️</i>B3<small>berbahaya</small></button>
+  </div>
+  <div style="text-align:center;margin-top:14px"><button class="btn" id="again" hidden>Main lagi</button></div>
+</div></section>
+
+<section id="langkah"><div class="sec">
+  <h2><em>2</em>Bikin kompos</h2>
+  <p class="lead">Ketuk langkah yang sudah kamu kerjakan.</p>
+  <div class="bar"><i id="pb"></i></div>
+  <div id="steps"></div>
+  <div class="two">
+    <div class="yes"><h3>✅ Boleh</h3><ul><li>Sisa sayur dan buah</li><li>Ampas kopi dan teh</li><li>Kulit telur</li><li>Daun kering</li></ul></div>
+    <div class="no"><h3>❌ Jangan</h3><ul><li>Daging dan ikan</li><li>Minyak goreng</li><li>Susu dan keju</li><li>Plastik</li></ul></div>
+  </div>
+</div></section>
+
+<section id="masalah"><div class="sec">
+  <h2><em>3</em>Kompos bermasalah?</h2>
+  <p class="lead">Pilih yang kamu lihat di komposmu.</p>
+  <div class="chips" id="chips"></div>
+  <div id="ans" aria-live="polite">Pilih salah satu masalah di atas.</div>
+</div></section>
+
+<section id="hitung"><div class="sec">
+  <h2><em>4</em>Hitung manfaatmu</h2>
+  <p class="lead">Berapa kilo sisa dapur di rumahmu setiap hari?</p>
+  <div class="calc">
+    <label for="kg" style="font-weight:800">Sampah dapur: <span id="kgv">0,5</span> kg per hari</label>
+    <input id="kg" type="range" min="0.2" max="3" step="0.1" value="0.5">
+    <div class="big" id="yr">182</div>
+    <div>kg sampah tidak ke TPA dalam setahun</div>
+    <div style="margin-top:8px;font-size:16px" id="pp"></div>
+  </div>
+</div></section>
+
+<footer>ECOCOMPOS · Media Pembelajaran Pendidikan Nonformal<br>Tugas Teknologi Pembelajaran PNFI</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const items=[["🍌","Kulit pisang","o"],["🥤","Botol plastik","a"],["🔋","Baterai bekas","b"],["🥬","Sisa sayur","o"],["📦","Kardus bersih","a"],["💡","Lampu neon bekas","b"],["🍂","Daun kering","o"],["☕","Ampas kopi","o"]];
+const msg={o:"Organik: bisa jadi kompos.",a:"Anorganik: kumpulkan untuk bank sampah.",b:"B3: pisahkan, serahkan ke tempat pengumpulan khusus."};
+let i=0,s=0,lock=false;
+function show(){const t=items[i];$("item").innerHTML="<span>"+t[0]+"</span>"+t[1];$("no").textContent="Barang "+(i+1)+"/8";$("sc").textContent="Benar: "+s;$("fb").textContent="";$("fb").className="fb";lock=false}
+$("bins").onclick=e=>{const b=e.target.closest(".bin");if(!b||lock)return;lock=true;const t=items[i],ok=b.dataset.k===t[2],f=$("fb");if(ok)s++;
+ f.className="fb "+(ok?"ok":"no");f.textContent=(ok?"Betul! ":"Kurang tepat. ")+msg[t[2]];$("sc").textContent="Benar: "+s;
+ setTimeout(()=>{i++;if(i<8)show();else{$("item").innerHTML="<span>🏆</span>Skor "+s+" dari 8";f.className="fb";f.textContent=s>=7?"Hebat! Kamu siap mengompos.":"Bagus! Coba lagi supaya makin hafal.";$("again").hidden=false}},1800)};
+$("again").onclick=()=>{i=0;s=0;$("again").hidden=true;show()};show();
+
+const st=[["🪣","Siapkan wadah","Ember bekas atau komposter, beri lubang di bawah dan tutup. Taruh di tempat teduh."],["🥕","Kumpulkan bahan","Sisa sayur, kulit buah, ampas kopi, dan daun kering."],["🔪","Cacah kecil","Potong 2–3 cm supaya cepat hancur."],["🥞","Susun berlapis","Coklat (daun kering) di dasar, lalu hijau (sisa sayur), lalu coklat lagi. Tambah sedikit tanah."],["💧","Jaga kelembapan","Lembap seperti spons diperas, tidak menetes."],["🥄","Aduk tiap 3–4 hari","Supaya ada udara dan tidak bau. Perbandingan coklat:hijau = 2:1."],["🌻","Panen kompos","Setelah 4–8 minggu: coklat kehitaman, remah, berbau tanah."]];
+const sw=$("steps");st.forEach(t=>{const b=document.createElement("button");b.className="step";b.setAttribute("aria-pressed","false");
+ b.innerHTML='<span class="ic"><span>'+t[0]+'</span></span><span><b>'+t[1]+'</b><p>'+t[2]+'</p></span>';
+ b.onclick=()=>{b.classList.toggle("done");b.setAttribute("aria-pressed",b.classList.contains("done"));$("pb").style.width=sw.querySelectorAll(".done").length/7*100+"%"};sw.appendChild(b)});
+
+const pr=[["Bau busuk","Terlalu basah dan kurang udara.",["Tambah daun kering atau kardus sobek","Aduk lebih sering","Cek lubang bawah wadah tidak tersumbat"]],["Bau tajam seperti amonia","Bahan hijau terlalu banyak.",["Tambah bahan coklat","Aduk sampai rata"]],["Kering, tidak hancur","Kurang air.",["Percikkan air sedikit demi sedikit","Tutup wadah agar lembap"]],["Banyak lalat","Sisa makanan terbuka di permukaan.",["Tutup bahan baru dengan tanah atau daun kering","Jangan masukkan daging dan ikan","Pasang tutup rapat"]],["Ada jamur putih","Tidak apa-apa, itu jamur pengurai yang baik.",["Biarkan saja","Aduk sesekali"]]];
+const ch=$("chips");pr.forEach(p=>{const b=document.createElement("button");b.className="chip";b.setAttribute("aria-pressed","false");b.textContent=p[0];
+ b.onclick=()=>{ch.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");$("ans").innerHTML="<b>Penyebab:</b> "+p[1]+"<ul>"+p[2].map(x=>"<li>"+x+"</li>").join("")+"</ul>"};ch.appendChild(b)});
+
+function calc(){const k=parseFloat($("kg").value),y=Math.round(k*365);$("kgv").textContent=String(k).replace(".",",");$("yr").textContent=y.toLocaleString("id-ID");$("pp").textContent="Setara sekitar "+Math.round(y/10)+" karung beras 10 kg."}
+$("kg").oninput=calc;calc();
+</script>
+</body>
+</html>
